@@ -10,15 +10,24 @@ struct GameKey {
 
 class MyGame : public AbstractGame {
 	private:
-		Rect box;
-
-		Vector2i velocity;
+		//my attributes
+		QueueManager dialogueQueue;
+		Dialogue dialogue;
+		int numOflines;
+		int linesPrinted = 0;
+		CharacterManager manager;
+		//SDL_Texture* image;
+		SDL_Rect textboxRect = { 75,400,1200,400 };
+		SDL_Rect backgroundRect = {0, 0, 1400, 788};
+		SDL_Texture* image;
+		SDL_Texture* textBox;
+		SDL_Texture* background;
+		Mix_Chunk* clickSound;
+		Mix_Chunk* bgMusic;
+		std::string imagePath;
+		std::string characterName;
 
 		std::vector<std::shared_ptr<GameKey>> gameKeys;
-
-		/* GAMEPLAY */
-		int score, numKeys, lives;
-		bool gameWon;
 
 		void handleKeyEvents();
 		void update();
