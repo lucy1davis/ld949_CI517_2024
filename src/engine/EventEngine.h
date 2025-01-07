@@ -28,9 +28,6 @@ class EventEngine {
 		void updateKeys(const SDL_Keycode &, bool);
 
 		EventEngine();
-
-		//my attribute
-		int mouseClicks;
 	public:
 		~EventEngine();
 
@@ -62,11 +59,6 @@ class EventEngine {
 		* Returns current mouse position relative to the window
 		*/
 		Point2 getMousePos();
-
-		//my code
-		bool MouseClick(Mouse btn);
-
-		
 };
 
 #endif
